@@ -1,71 +1,74 @@
-// // // Ex 1
-
-// const welcomePromise = () => {
-//     return new Promise(() => {
-//         setTimeout(() => {
-//             console.log('hello world');
-//         }, 2000);
-// 	})
+// 1
+// const sayHello = () => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve("hello world");
+//     }, 2000);
+//   });
 // };
 
 // const waitForResult = async () => {
-//     const result = await welcomePromise()
-//     console.log(result)
-//   }
-  
-// waitForResult()
-
-
-// // // Ex 2
-
- 
-
-// const checkTemperature = () => {
-//     return new Promise(() => {
-//     const temperature = 2
-
-//     setTimeout(() => {
-//       if (temperature <= 10) {
-//         console.log("Il fait froid")
-//       } else {
-//         console.log("Il fait chaud")
-//       }
-//     }, 4000)
-// })
+//   const result = await sayHello();
+//   console.log(result);
 // };
 
+// waitForResult();
 
-// const tempResult = async () => {
-//     const result = await checkTemperature()
-//     console.log(result)
-//   }
-  
-// tempResult()
-
-
-// // Ex 3
-
-
-
-const menageStatus = () => {
+// 2
+const getTemperature = () => {
     return new Promise((resolve, reject) => {
-        console.log("Je commence la lessive")
-        setTimeout(() => {
-            console.log("j’ai fini la lessive");
-            console.log("Je commence  la vaisselle")
-        }, 3000);
-        setTimeout(() => {
-            console.log("j’ai fini la vaisselle");
-        }, 4500);
-
-    })
-}
-
-
-const menageResult = async () => {
-    const result = await menageStatus()
-    console.log(result)
-    console.log("J’ai fini de faire le ménage");
-  }
+      const temperature = 2;
   
-menageResult()
+      setTimeout(() => {
+        if (temperature <= 10) {
+          resolve("il fait froid");
+        } else {
+          reject("il fait chaud");
+        }
+      }, 4000);
+    });
+  };
+  
+  const waitForTemperature = async () => {
+    try {
+      console.log("j'execute mon code");
+      const result = await getTemperature();
+      console.log(result);
+    } catch (error) {
+      console.log("blabla");
+      console.log(error);
+    }
+  };
+  
+  waitForTemperature();
+  
+  // 3
+  // const doLaundry = () => {
+  //   return new Promise((resolve, reject) => {
+  //     setTimeout(() => {
+  //       resolve("J'ai fini la lessive");
+  //     }, 3000);
+  //   });
+  // };
+  
+  // const doDishes = () => {
+  //   return new Promise((resolve, reject) => {
+  //     setTimeout(() => {
+  //       resolve("J'ai fini la vaisselle");
+  //     }, 1500);
+  //   });
+  // };
+  
+  // const clean = async () => {
+  //   console.log("Je commence la lessive...");
+  //   const result = await doLaundry();
+  //   console.log(result);
+  
+  //   console.log("Je commence a faire la vaisselle");
+  //   const result2 = await doDishes();
+  //   console.log(result2);
+  
+  //   console.log("J'ai fini de faire le menage");
+  // };
+  
+  // clean();
