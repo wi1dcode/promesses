@@ -1,49 +1,49 @@
-// Ex 1
+// // // Ex 1
 
-const welcomePromise = () => {
-    return new Promise(() => {
-        setTimeout(() => {
-            console.log('hello world');
-        }, 2000);
-	})
-};
+// const welcomePromise = () => {
+//     return new Promise(() => {
+//         setTimeout(() => {
+//             console.log('hello world');
+//         }, 2000);
+// 	})
+// };
 
-const waitForResult = async () => {
-    const result = await welcomePromise()
-    console.log(result)
-  }
+// const waitForResult = async () => {
+//     const result = await welcomePromise()
+//     console.log(result)
+//   }
   
-waitForResult()
+// waitForResult()
 
 
-// Ex 2
+// // // Ex 2
 
  
 
-const checkTemperature = () => {
-    return new Promise(() => {
-    const temperature = 2
+// const checkTemperature = () => {
+//     return new Promise(() => {
+//     const temperature = 2
 
-    setTimeout(() => {
-      if (temperature <= 10) {
-        console.log("Il fait froid")
-      } else {
-        console.log("Il fait chaud")
-      }
-    }, 4000)
-})
-};
+//     setTimeout(() => {
+//       if (temperature <= 10) {
+//         console.log("Il fait froid")
+//       } else {
+//         console.log("Il fait chaud")
+//       }
+//     }, 4000)
+// })
+// };
 
 
-const tempResult = async () => {
-    const result = await checkTemperature()
-    console.log(result)
-  }
+// const tempResult = async () => {
+//     const result = await checkTemperature()
+//     console.log(result)
+//   }
   
-tempResult()
+// tempResult()
 
 
-// Ex 3
+// // Ex 3
 
 
 
@@ -52,11 +52,11 @@ const menageStatus = () => {
         console.log("Je commence la lessive")
         setTimeout(() => {
             console.log("j’ai fini la lessive");
+            console.log("Je commence  la vaisselle")
         }, 3000);
-        console.log("Je commence  la vaisselle")
         setTimeout(() => {
             console.log("j’ai fini la vaisselle");
-        }, 1500);
+        }, 4500);
 
     })
 }
